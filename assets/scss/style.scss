@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import "header";
+@import "hero";
+@import "why_avito";
+@import "avito_profile";
+@import "avito_offer";
+body {
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  font-weight: 500;
+  font-family: "Montserrat";
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.flex {
+  display: flex;
+
+  &.between {
+    justify-content: space-between;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.end {
+    justify-content: flex-end;
+  }
+
+  &.start {
+    justify-content: flex-start;
+  }
+
+  &.column {
+    flex-direction: column;
+  }
+
+  &.a_center {
+    align-items: center;
+  }
+
+  &.a_start {
+    align-items: flex-start;
+  }
+
+  &.a_end {
+    align-items: flex-end;
+  }
+  &.wrap {
+    flex-wrap: wrap;
+  }
+}
+.button {
+  width: 292px;
+  height: 59px;
+  border-radius: 12px;
+  box-shadow: 11.934px 1.254px 12px rgba(90, 22, 72, 0.75);
+  background-color: #ffffff;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 17px;
+  line-height: 75px;
+  text-transform: uppercase;
+  color: #333333;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 10px;
+}
+.title {
+  font-size: 59px;
+  line-height: 60px;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: "Montserrat";
+  text-align: center;
+}

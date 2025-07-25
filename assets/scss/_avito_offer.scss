@@ -1,0 +1,63 @@
+.avito_offer {
+  padding-top: 135px;
+  background: url("../images/avito_bg.png") center right no-repeat;
+  background-size: 100% 100%;
+  &_top {
+    font-size: 47px;
+    line-height: 29px;
+    color: #ffffff;
+    font-weight: 300;
+    gap: 12px;
+
+    .button {
+      box-shadow: 0 60px rgba(92, 241, 236, 0.59);
+      border-radius: 15px;
+      background-image: linear-gradient(-45deg, #b6f505 0%, #0892df 100%);
+      font-size: 47px;
+      line-height: 35px;
+      color: #ffffff;
+      font-weight: 600;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      width: fit-content;
+      padding: 22px 12px;
+    }
+  }
+  &_items {
+    padding-top: 80px;
+    gap: 45px;
+  }
+  &_item {
+    padding-bottom: 45px;
+    border-bottom: 3px solid #85a1aa;
+    gap: 25px;
+    &_number {
+      width: 87px;
+      height: 87px;
+      flex: 0 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 0 60px rgba(92, 241, 236, 0.59);
+      background-image: linear-gradient(-45deg, #c309f5 0%, #0098dd 100%);
+      font-size: 46px;
+      line-height: 60px;
+      color: #ffffff;
+      font-weight: 600;
+      font-family: "Montserrat";
+    }
+    &_title {
+      font-size: 23px;
+      line-height: 37px;
+      color: #ffffff;
+      font-weight: 600;
+      font-family: "Montserrat";
+    }
+    &_text {
+      font-size: 23px;
+      line-height: 29px;
+      color: #ffffff;
+      font-weight: 300;
+      font-family: "Montserrat";
+    }
+  }
+}

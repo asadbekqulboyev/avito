@@ -11,5 +11,10 @@ $(document).ready(function () {
       $this.toggleClass('is_open');
       $content.toggleClass('is_visible');
     });
+    $('.hamburger').click(function () {
+      $(this).toggleClass('active');
+      $('.header_mobile').toggleClass('active');
+      $('body').toggleClass('hidden');
+    });
   });
   

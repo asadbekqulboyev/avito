@@ -1,12 +1,63 @@
 .hero {
   background: url("../images/hero.png") center center/cover no-repeat;
+  @media (max-width: 660px) {
+    background: none;
+  }
+  .policy {
+    display: none !important;
+    @media (max-width: 660px) {
+      font-size: 24px;
+      display: flex !important;
+      gap: 24px;
+      line-height: normal;
+    }
+  }
   .container {
     padding-top: 160px;
     padding-bottom: 80px;
+
     gap: 60px;
+    @media (max-width: 768px) {
+      gap: 24px;
+    }
+    @media (max-width: 660px) {
+      padding-top: 55px;
+      padding-bottom: 35px;
+      flex-direction: column;
+    }
+  }
+  .lists {
+    display: none;
+    gap: 10px;
+    @media (max-width: 1024px) {
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    li {
+      gap: 10px;
+      .elipse {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #63e685;
+        flex: 0 0 auto;
+      }
+      span {
+        @media (max-width: 1130px) {
+          font-size: 14px;
+        }
+      }
+    }
   }
   &_left {
     padding-top: 35px;
+    @media (max-width: 1130px) {
+      padding-top: 0;
+    }
+    @media (max-width: 660px) {
+      width: 100%;
+    }
   }
   &_title {
     font-size: 59px;
@@ -14,12 +65,33 @@
     color: #ffffff;
     font-weight: 700;
     max-width: 600px;
+    @media (max-width: 1130px) {
+      font-size: 27px;
+      line-height: 27px;
+      color: #ffffff;
+      font-weight: 700;
+    }
   }
   .gift_block {
     margin-top: 14px;
     gap: 20px;
     font-weight: 400;
     font-size: 27px;
+    @media (max-width: 1130px) {
+      font-size: 24px;
+    }
+    @media (max-width: 768px) {
+      gap: 12px;
+      font-size: 18px;
+    }
+    @media (max-width: 660px) {
+      margin-top: 10px;
+      gap: 10px;
+      font-size: 14px;
+      line-height: 6px;
+      color: #ffffff;
+      font-family: "Montserrat";
+    }
     b {
       line-height: 11px;
       color: #ffffff;
@@ -28,6 +100,12 @@
     }
     img {
       width: 112px;
+      @media (max-width: 1140px) {
+        width: 95px;
+      }
+      @media (max-width: 768px) {
+        width: 70px;
+      }
     }
     .flex {
       gap: 10px;
@@ -45,6 +123,10 @@
     padding: 20px;
     margin-top: 40px;
     gap: 20px;
+    @media (max-width: 768px) {
+      gap: 14px;
+      padding: 16px;
+    }
     &_title {
       font-size: 19px;
       letter-spacing: -2px;
@@ -58,6 +140,9 @@
       color: #ffffff;
       font-weight: 300;
       font-family: "Montserrat";
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
     }
     &_info {
       gap: 5px;
@@ -69,9 +154,22 @@
     line-height: 22px;
     font-weight: 600;
     color: #fff;
+    @media (max-width: 660px) {
+      max-width: 100%;
+    }
     &_title {
       color: #86e6ad;
       margin-top: 25px;
+      @media (max-width: 768px) {
+        margin-top: 16px;
+      }
+      @media (max-width: 660px) {
+        text-align: center;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 600;
+        text-align: center;
+      }
     }
     .hero_img {
       width: 100%;
@@ -82,6 +180,19 @@
     p {
       padding-top: 25px;
       font-weight: 400;
+      @media (max-width: 768px) {
+        padding-top: 16px;
+        font-size: 15px;
+      }
+      @media (max-width: 660px) {
+        text-align: center;
+        font-size: 13px;
+        line-height: 22px;
+        color: #ffffff;
+        font-weight: 400;
+        font-family: "Montserrat";
+        text-align: center;
+      }
     }
   }
 }

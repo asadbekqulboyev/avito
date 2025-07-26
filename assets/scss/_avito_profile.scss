@@ -3,6 +3,9 @@
   background: url("../images/hero.png") center right no-repeat;
   background-size: 100% 100%;
   overflow: hidden;
+  @media (max-width: 660px) {
+    background: transparent;
+  }
   &_items {
     padding-top: 128px;
   }

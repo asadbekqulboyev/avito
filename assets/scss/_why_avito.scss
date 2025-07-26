@@ -2,6 +2,9 @@
   padding-top: 90px;
   background: url("../images/hero.png") center right no-repeat;
   background-size: 100% 100%;
+  @media (max-width: 660px) {
+    background: none;
+  }
   .container {
     padding-bottom: 245px;
   }
@@ -40,5 +43,4 @@
     font-weight: 400;
     text-align: center;
   }
-  
 }

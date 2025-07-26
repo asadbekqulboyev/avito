@@ -1,7 +1,7 @@
 .avito_offer {
   padding-top: 135px;
-  background: url("../images/avito_bg.png") center right no-repeat;
-  background-size: 100% 100%;
+  // background: url("../images/avito_bg.png") center right no-repeat;
+  // background-size: 100% 100%;
   &_top {
     font-size: 47px;
     line-height: 29px;
@@ -10,7 +10,6 @@
     gap: 12px;
 
     .button {
-      box-shadow: 0 60px rgba(92, 241, 236, 0.59);
       border-radius: 15px;
       background-image: linear-gradient(-45deg, #b6f505 0%, #0892df 100%);
       font-size: 47px;
@@ -58,6 +57,177 @@
       color: #ffffff;
       font-weight: 300;
       font-family: "Montserrat";
+    }
+  }
+  .all_content {
+    font-size: 47px;
+    font-weight: 300;
+    margin-top: 35px;
+  }
+  &_statistics {
+    padding-top: 60px;
+    &_item {
+      width: calc(33.33% - 15px);
+      justify-content: space-between;
+      .display {
+        width: 100%;
+        height: 145px;
+        border-radius: 16px;
+        box-shadow: 0 0 60px rgba(92, 241, 236, 0.59);
+        background-color: #ffffff;
+      }
+      span {
+        font-size: 95px;
+        line-height: 29px;
+        color: #010101;
+        font-weight: 700;
+      }
+      sub {
+        font-size: 23px;
+        line-height: 29px;
+        color: #000000;
+        font-weight: 700;
+        padding-top: 39px;
+      }
+      .check {
+        margin-top: 30px;
+        gap: 15px;
+      }
+    }
+    &_body {
+      margin-top: 35px;
+      font-size: 19px;
+      line-height: 29px;
+      color: #ffffff;
+      font-weight: 300;
+    }
+    .avito_offer_item_bottom {
+      gap: 15px;
+      padding-top: 15px;
+      img {
+        max-width: 100%;
+      }
+      span {
+        font-size: 24px;
+        line-height: 29px;
+        font-weight: 400;
+        color: #ffffff;
+      }
+    }
+  }
+  .avito_form {
+    padding-top: 45px;
+    .form_left {
+      font-size: 26px;
+      line-height: 29px;
+      color: #ffffff;
+      font-weight: 400;
+    }
+
+    .price_display {
+      font-size: 95px;
+      line-height: 29px;
+      color: #ffffff;
+      font-weight: 700;
+      width: 100%;
+      max-width: 592px;
+      height: 172px;
+      border-radius: 15px;
+      background-color: rgba(209, 47, 106, 0);
+      border: 3px solid #ffffff;
+    }
+    .form_right {
+      span:first-child {
+        font-size: 43px;
+        line-height: 43px;
+        color: #ffffff;
+        font-weight: 400;
+      }
+      .acsiya {
+        font-size: 25px;
+        line-height: 43px;
+        color: #00d8ff;
+        font-weight: 400;
+      }
+    }
+  }
+  .button_group {
+    padding-top: 41px;
+    gap: 10px;
+    .button {
+      line-height: normal;
+    }
+    .gradient {
+      box-shadow: 0 0 60px rgba(92, 241, 236, 0.59);
+    }
+  }
+}
+
+// faq
+.faq_section {
+  padding-top: 130px;
+}
+
+.faq_accordion {
+  gap: 44px;
+  padding-top: 65px;
+  &__item {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  &__trigger {
+    width: 100%;
+    background: none;
+    color: #fff;
+    font-size: 32px;
+    line-height: 60px;
+    color: #ffffff;
+    font-weight: 400;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+      content: "+";
+      position: absolute;
+      top: 0;
+      right: 42px;
+      font-size: 22px;
+      transition: transform 0.3s ease;
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
+      background-color: #ffffff;
+      font-size: 49px;
+      line-height: 60px;
+      color: #000000;
+      font-weight: 400;
+      font-family: "Montserrat";
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &.is_open::after {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    color: #fff;
+    padding: 0 10px;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+
+    p {
+      margin: 15px 0;
+    }
+
+    &.is_visible {
+      max-height: 200px;
     }
   }
 }

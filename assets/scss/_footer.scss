@@ -1,0 +1,26 @@
+.footer {
+  padding-top: 120px;
+  padding-bottom: 157px;
+  font-size: 20px;
+  line-height: 38px;
+  color: #ffffff;
+  font-weight: 400;
+  font-family: "Montserrat";
+  text-align: center;
+  .flex {
+    gap: 25px;
+  }
+  a {
+    font-size: 39px;
+    line-height: 38px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Montserrat";
+    text-align: center;
+    text-decoration: none;
+    margin-top: 25px;
+  }
+  p {
+    padding-top: 100px;
+  }
+}

@@ -11,6 +11,14 @@
       gap: 24px;
       line-height: normal;
     }
+    @media (max-width: 556px) {
+      font-size: 14px;
+      line-height: 16px;
+      color: #ffffff;
+      gap: 5px;
+      font-weight: 500;
+      font-family: "Montserrat";
+    }
   }
   .container {
     padding-top: 160px;
@@ -127,12 +135,20 @@
       gap: 14px;
       padding: 16px;
     }
+    @media (max-width: 556px) {
+      padding: 6px 15px;
+      gap: 10px;
+      margin-top: 24px;
+    }
     &_title {
       font-size: 19px;
       letter-spacing: -2px;
       text-decoration: underline;
       color: #ffffff;
       font-weight: 700;
+      @media (max-width: 556px) {
+        font-size: 12px;
+      }
     }
     p {
       font-size: 20px;
@@ -142,6 +158,12 @@
       font-family: "Montserrat";
       @media (max-width: 768px) {
         font-size: 16px;
+      }
+      @media (max-width: 556px) {
+        font-size: 12px;
+        letter-spacing: 0px;
+        color: #ffffff;
+        line-height: normal;
       }
     }
     &_info {

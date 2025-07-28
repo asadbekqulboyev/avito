@@ -27,6 +27,9 @@
     @media (max-width: 1024px) {
       max-width: 35%;
     }
+    @media (max-width: 660px) {
+      max-width: 55%;
+    }
     img {
       @media (max-width: 1024px) {
         max-width: 100%;
@@ -60,7 +63,7 @@
     @media (max-width: 660px) {
       align-items: center !important;
     }
-    span {
+    .green {
       font-size: 16px;
       line-height: 19px;
       color: #35d252;
@@ -84,7 +87,7 @@
       line-height: normal;
       text-decoration: none;
       @media (max-width: 1130px) {
-        font-size: 16px;
+        font-size: 18px;
         line-height: 0;
       }
     }
@@ -132,6 +135,7 @@
     &.active {
       justify-content: center;
       align-items: center;
+      z-index: 222;
       span {
         position: absolute;
 
@@ -159,15 +163,15 @@
   }
   &_mobile {
     position: fixed;
-    top: 60px;
+    top: 0px;
     right: -100%;
     z-index: 100;
     width: 100%;
-    height: calc(100vh - 60px);
+    height: 100vh;
     overflow-y: auto;
     background: #0e0e0e7b;
     backdrop-filter: blur(6px);
-    padding: 20px 15px;
+    padding: 60px 15px 30px;
     transition: all 0.3s linear;
     &.active {
       right: 0;

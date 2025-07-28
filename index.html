@@ -34,7 +34,7 @@
                 </ul>
                 <div class="flex phone end a_end">
                     <div class="flex column a_end end">
-                        <span>Мы работаем, звоните!</span>
+                        <span class="green">Мы работаем, звоните!</span>
                         <a href="tel:+78432485252" class="tel"> <img src="assets/images/mobile_tel.svg" alt="">
                             <span>+7(843)248-52-52</span>
                         </a>
@@ -136,7 +136,7 @@
                         Почему стоит выбрать Авито?
                     </h2>
                     <div class="why_avito_items flex between">
-                        <div class="why_avito_item flex column center a_center ">
+                        <div class="why_avito_item flex column  a_center ">
                             <div class="why_avito_number flex center a_center">
                                 1
                             </div>
@@ -150,7 +150,7 @@
                                 И эта цифра продолжает расти.
                             </p>
                         </div>
-                        <div class="why_avito_item flex column center a_center">
+                        <div class="why_avito_item flex column  a_center">
                             <div class="why_avito_number flex center a_center">
                                 2
                             </div>
@@ -164,7 +164,7 @@
                                 продвижения.
                             </p>
                         </div>
-                        <div class="why_avito_item flex column center a_center">
+                        <div class="why_avito_item flex column  a_center">
                             <div class="why_avito_number flex center a_center   ">
                                 3
                             </div>
@@ -180,7 +180,7 @@
                         </div>
                     </div>
                     <a href="#" class="all_content title flex center a_center">А еще...</a>
-                    <div class="why_avito_items flex between">
+                    <div class="why_avito_items flex between last">
                         <div class="why_avito_item flex column center a_center ">
 
                             <div class="title">
@@ -263,6 +263,7 @@
                                 <div class="img"><img src="assets/images/plus.png" alt=""></div>
                                 <br>
                                 <span class="last">Высокие <br> продажи</span>
+                                <a href="#" class="mobile_link">А еще...</a>
                             </div>
                             <div class="telegram">
                                 <img src="assets/images/tg.svg" alt="">
@@ -272,6 +273,10 @@
                                     рабочая
                                     группа
                                     в Телеграм!
+                                </span>
+                                <span class="last">
+                                    Удобно и мы
+                                    всегда на связи!
                                 </span>
                             </div>
                         </div>
@@ -283,8 +288,12 @@
                     <h2 class="title">С нами Вы всегда получаете больше, чем заплатили </h2>
                     <div class="avito_offer_top flex a_center center">
                         <span>Уже входит в тариф </span>
-                        <a href="#" class="button"> Комплекс плюс:</a>
+                        <div class="flex column">
+                            <a href="#" class="button"> Комплекс плюс:</a>
+                            <span class="last">Выгодный тариф</span>
+                        </div>
                     </div>
+
                     <div class="avito_offer_items flex column">
                         <div class="avito_offer_item flex ">
                             <div class="avito_offer_item_number flex center a_center">
@@ -327,7 +336,7 @@
                     <a href="#" class="title all_content flex center a_center column">А также:</a>
                     <div class="avito_offer_statistics flex between">
                         <div class="avito_offer_statistics_item flex  a_center column">
-                            <div>
+                            <div class="top">
                                 <div class="display flex a_center center">
                                     <span>125</span>
                                     <sub>шт.</sub>
@@ -337,7 +346,12 @@
                                     карточки на авито с описанием,
                                     фото и ценой. Всего будет
                                     125 объявлений
+
                                 </div>
+                                <span class="mobile_chek">
+                                    <img src="assets/images/avito_profile_item1.svg" alt="">
+                                    <span>Включено</span>
+                                </span>
                             </div>
                             <div class="avito_offer_item_bottom">
                                 <img src="assets/images/line.png" alt="">
@@ -348,7 +362,7 @@
                             </div>
                         </div>
                         <div class="avito_offer_statistics_item  flex  a_center column">
-                            <div>
+                            <div class="top">
                                 <div class="display flex a_center center">
                                     <span>3</span>
                                     <sub>шт.</sub>
@@ -359,6 +373,10 @@
                                     с описанием, ключевыми словами,
                                     фото и ценой.
                                 </div>
+                                <span class="mobile_chek">
+                                    <img src="assets/images/avito_profile_item1.svg" alt="">
+                                    <span>Включено</span>
+                                </span>
                             </div>
                             <div class="avito_offer_item_bottom">
                                 <img src="assets/images/line.png" alt="">
@@ -369,7 +387,7 @@
                             </div>
                         </div>
                         <div class="avito_offer_statistics_item flex  a_center column">
-                            <div>
+                            <div class="top">
                                 <div class="display flex a_center center">
                                     <span>30</span>
                                     <sub>дней</sub>
@@ -379,6 +397,10 @@
                                     следить за объявлениями,
                                     коректировать рекламный бюджет.
                                 </div>
+                                <span class="mobile_chek">
+                                    <img src="assets/images/avito_profile_item1.svg" alt="">
+                                    <span>Включено</span>
+                                </span>
                             </div>
                             <div class="avito_offer_item_bottom">
                                 <img src="assets/images/line.png" alt="">
@@ -410,46 +432,48 @@
                         <a href="#" class="button flex center a_center">Оформить заявку</a>
                         <a href="#" class="button gradient flex center a_center">Получить консультацию</a>
                     </div>
-                    <section class="faq_section">
-                        <h2 class="title">Частые вопросы</h2>
-                        <div class="faq_accordion flex column ">
-                            <div class="faq_accordion__item">
-                                <div class="faq_accordion__trigger">Работаете ли Вы официально по Договору?</div>
-                                <div class="faq_accordion__content">
-                                    <p>Да, мы работаем официально по договору с каждым клиентом.</p>
-                                </div>
-                            </div>
-                            <div class="faq_accordion__item">
-                                <div class="faq_accordion__trigger">В течение какого срока оформляется Профиль
-                                    Авито?</div>
-                                <div class="faq_accordion__content">
-                                    <p>Обычно оформление занимает от 1 до 3 рабочих дней.</p>
-                                </div>
-                            </div>
-                            <div class="faq_accordion__item">
-                                <div class="faq_accordion__trigger">Можно ли оформить Профиль Авито на физическое
-                                    лицо?</div>
-                                <div class="faq_accordion__content">
-                                    <p>Да, оформление возможно как на физическое, так и на юридическое лицо.</p>
-                                </div>
-                            </div>
-                            <div class="faq_accordion__item">
-                                <div class="faq_accordion__trigger">Как отслеживать свои продажи на Авито?</div>
-                                <div class="faq_accordion__content">
-                                    <p>Продажи можно отслеживать через личный кабинет Авито или приложение.</p>
-                                </div>
-                            </div>
-                            <div class="faq_accordion__item">
-                                <div class="faq_accordion__trigger">Будут ли мои товары или услуги актуальны на
-                                    Авито?</div>
-                                <div class="faq_accordion__content">
-                                    <p>Да, мы адаптируем ваши товары под поисковые алгоритмы Авито для актуальности.</p>
-                                </div>
+
+                </div>
+            </section>
+            <section class="faq_section">
+                <div class="container">
+
+                    <h2 class="title">Частые вопросы</h2>
+                    <div class="faq_accordion flex column ">
+                        <div class="faq_accordion__item">
+                            <div class="faq_accordion__trigger">Работаете ли Вы официально по Договору?</div>
+                            <div class="faq_accordion__content">
+                                <p>Да, мы работаем официально по договору с каждым клиентом.</p>
                             </div>
                         </div>
-
-                    </section>
-
+                        <div class="faq_accordion__item">
+                            <div class="faq_accordion__trigger">В течение какого срока оформляется Профиль
+                                Авито?</div>
+                            <div class="faq_accordion__content">
+                                <p>Обычно оформление занимает от 1 до 3 рабочих дней.</p>
+                            </div>
+                        </div>
+                        <div class="faq_accordion__item">
+                            <div class="faq_accordion__trigger">Можно ли оформить Профиль Авито на физическое
+                                лицо?</div>
+                            <div class="faq_accordion__content">
+                                <p>Да, оформление возможно как на физическое, так и на юридическое лицо.</p>
+                            </div>
+                        </div>
+                        <div class="faq_accordion__item">
+                            <div class="faq_accordion__trigger">Как отслеживать свои продажи на Авито?</div>
+                            <div class="faq_accordion__content">
+                                <p>Продажи можно отслеживать через личный кабинет Авито или приложение.</p>
+                            </div>
+                        </div>
+                        <div class="faq_accordion__item">
+                            <div class="faq_accordion__trigger">Будут ли мои товары или услуги актуальны на
+                                Авито?</div>
+                            <div class="faq_accordion__content">
+                                <p>Да, мы адаптируем ваши товары под поисковые алгоритмы Авито для актуальности.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -461,7 +485,7 @@
                     <span>Казань, Гвардейская, 15, офис 102 (9 этаж)</span>
                 </div>
                 <a href="tel:+78432485252" class="flex center a_center">
-                    <img src="assets/images/location.svg" alt="">
+                    <img src="assets/images/phone.svg" alt="">
                     <span>+7 (843) 248-52-52</span>
                 </a>
                 <p class="flex center a_center">

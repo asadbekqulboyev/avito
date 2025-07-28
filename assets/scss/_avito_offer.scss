@@ -46,7 +46,7 @@
       align-items: center;
       justify-content: center;
       display: flex;
-      width: fit-content;
+      max-width: fit-content;
       padding: 22px 12px;
       @media (max-width: 1024px) {
         font-size: 32px;

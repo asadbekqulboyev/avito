@@ -16,5 +16,6 @@ $(document).ready(function () {
       $('.header_mobile').toggleClass('active');
       $('body').toggleClass('hidden');
     });
+    AOS.init();
   });
   

@@ -290,6 +290,14 @@
     font-size: 14px;
   }
 }
+@media (max-width: 556px) {
+  .hero .lists li span {
+    font-size: 14px;
+    line-height: 16px;
+    color: #ffffff;
+    font-weight: 500;
+  }
+}
 .hero_left {
   padding-top: 35px;
 }
@@ -370,6 +378,11 @@
 .hero .button {
   margin-top: 20px;
 }
+@media (max-width: 556px) {
+  .hero .button {
+    margin-top: 12px;
+  }
+}
 .hero .todo {
   width: 100%;
   max-width: 530px;
@@ -403,6 +416,10 @@
 @media (max-width: 556px) {
   .hero .todo_title {
     font-size: 12px;
+    letter-spacing: 0px;
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
   }
 }
 .hero .todo p {

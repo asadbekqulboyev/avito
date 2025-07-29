@@ -19,7 +19,7 @@ body {
   background-size: 100% 100%;
   background-position: bottom center;
   font-family: "Montserrat";
-  @media (max-width: 660px) {
+  @media (max-width: 556px) {
     background: none;
   }
   &.hidden {
@@ -28,7 +28,7 @@ body {
 }
 .wrapper {
   overflow: hidden;
-  @media (max-width: 660px) {
+  @media (max-width: 556px) {
     background: url("../images/mobile_bg.png") no-repeat center;
     background-size: 400% 100%;
   }

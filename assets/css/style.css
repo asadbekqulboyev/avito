@@ -221,7 +221,7 @@
 .hero {
   background: url("../images/hero.png") center center/cover no-repeat;
 }
-@media (max-width: 660px) {
+@media (max-width: 556px) {
   .hero {
     background: none;
   }
@@ -508,7 +508,7 @@
   background: url("../images/hero.png") center right no-repeat;
   background-size: 100% 100%;
 }
-@media (max-width: 660px) {
+@media (max-width: 556px) {
   .why_avito {
     background: none;
     padding-top: 0;
@@ -646,7 +646,7 @@
   background-size: 100% 100%;
   overflow: hidden;
 }
-@media (max-width: 660px) {
+@media (max-width: 556px) {
   .avito_profile {
     padding-top: 45px;
     background: none;
@@ -1651,7 +1651,7 @@ body {
   background-position: bottom center;
   font-family: "Montserrat";
 }
-@media (max-width: 660px) {
+@media (max-width: 556px) {
   body {
     background: none;
   }
@@ -1663,7 +1663,7 @@ body.hidden {
 .wrapper {
   overflow: hidden;
 }
-@media (max-width: 660px) {
+@media (max-width: 556px) {
   .wrapper {
     background: url("../images/mobile_bg.png") no-repeat center;
     background-size: 400% 100%;

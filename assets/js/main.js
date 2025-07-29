@@ -44,9 +44,9 @@ $(document).ready(function () {
       var chat_id = '2109316820';
   
       var text = "📝 Новая заявка на консультацию:\n\n" +
-                 "👤 Имя: " + name + "\n" +
-                 "📞 Телефон: " + phone + "\n" +
-                 "💬 Пожелания: " + (comment ? comment : "—");
+                 "<b>👤 Имя: </b>" + name + "\n" +
+                 "<b>📞 Телефон: </b>" + phone + "\n" +
+                 "<b>💬 Пожелания: </b>" + (comment ? comment : "—");
   
       $.get("https://api.telegram.org/bot" + token + "/sendMessage", {
         chat_id: chat_id,

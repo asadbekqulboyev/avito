@@ -28,9 +28,20 @@ body {
 }
 .wrapper {
   overflow: hidden;
-  @media (max-width: 556px) {
-    background: url("../images/mobile_bg.png") no-repeat center;
-    background-size: 400% 100%;
+  position: relative;
+  .mobile_bg {
+    display: none;
+    @media (max-width: 556px) {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -71.5%;
+      width: 190%;
+      height: 100%;
+      z-index: -1;
+      // background: url("../images/mobile_bg.png") no-repeat center;
+      // background-size: 400% 100%;
+    }
   }
 }
 .container {
@@ -136,4 +147,9 @@ body {
     color: #ffffff;
     font-weight: 500;
   }
+}
+
+main {
+  position: relative;
+  z-index: 2;
 }

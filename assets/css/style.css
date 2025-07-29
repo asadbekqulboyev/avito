@@ -1576,6 +1576,8 @@
   font-weight: 400;
   font-family: "Montserrat";
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 @media (max-width: 768px) {
   .footer {
@@ -1664,11 +1666,20 @@ body.hidden {
 
 .wrapper {
   overflow: hidden;
+  position: relative;
+}
+.wrapper .mobile_bg {
+  display: none;
 }
 @media (max-width: 556px) {
-  .wrapper {
-    background: url("../images/mobile_bg.png") no-repeat center;
-    background-size: 400% 100%;
+  .wrapper .mobile_bg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -71.5%;
+    width: 190%;
+    height: 100%;
+    z-index: -1;
   }
 }
 
@@ -1780,4 +1791,9 @@ body.hidden {
     color: #ffffff;
     font-weight: 500;
   }
+}
+
+main {
+  position: relative;
+  z-index: 2;
 }/*# sourceMappingURL=style.css.map */

@@ -196,13 +196,16 @@
   top: 0px;
   right: -100%;
   z-index: 100;
-  width: 100%;
+  width: 65%;
   height: 100vh;
   overflow-y: auto;
-  background: rgba(14, 14, 14, 0.4823529412);
+  background: #211b17;
   backdrop-filter: blur(6px);
-  padding: 60px 15px 30px;
+  padding: 66px 25px 60px;
   transition: all 0.3s linear;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .header_mobile.active {
   right: 0;
@@ -216,6 +219,23 @@
 .header_mobile a {
   text-decoration: none;
   color: #fff;
+  text-transform: uppercase;
+}
+.header_mobile a:hover {
+  color: #86e6ad;
+}
+.header_mobile .bottom_links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.header_mobile .bottom_links a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.header_mobile .bottom_links a img {
+  max-width: 24px;
 }
 
 .hero {

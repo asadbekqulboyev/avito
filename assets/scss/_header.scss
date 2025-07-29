@@ -166,13 +166,16 @@
     top: 0px;
     right: -100%;
     z-index: 100;
-    width: 100%;
+    width: 65%;
     height: 100vh;
     overflow-y: auto;
-    background: #0e0e0e7b;
+    background: #211b17;
     backdrop-filter: blur(6px);
-    padding: 60px 15px 30px;
+    padding: 66px 25px 60px;
     transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     &.active {
       right: 0;
     }
@@ -185,6 +188,23 @@
     a {
       text-decoration: none;
       color: #fff;
+      text-transform: uppercase;
+      &:hover {
+        color: #86e6ad;
+      }
+    }
+    .bottom_links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        img {
+          max-width: 24px;
+        }
+      }
     }
   }
 }

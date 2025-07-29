@@ -20,6 +20,12 @@ $(document).ready(function () {
     $('.open_modal').click(function(){
       $('.modal').fadeIn()
     })
+    $('.phone_mask').inputmask({
+      mask: '+7 (999) 999-99-99',
+      showMaskOnHover: false,
+      showMaskOnFocus: true,
+      clearIncomplete: true
+    });
     $('#consult_form').on('submit', function(e) {
       e.preventDefault();
   

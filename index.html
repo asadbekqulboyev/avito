@@ -530,10 +530,11 @@
             </div>
             <form action="#" id="consult_form">
                 <div class="modal_inputs">
-                    <input type="text" placeholder="Ваше имя" name="firstname">
-                    <input type="text" placeholder="Телефон" name="phone">
+                    <input type="text" placeholder="Ваше имя" name="firstname" required>
+                    <input type="text" name="phone" placeholder="+7 (___) ___-__-__" class="phone_mask" required>
+
                     <textarea name="comment" placeholder="Ваши пожелания"></textarea>
-                    <div class="g-recaptcha" data-sitekey="6LfrnpMrAAAAAAIe32GMlNcxW-rpnI2eTc1jkmvy"></div>
+                    <div class="g-recaptcha" data-sitekey="6Ld6oJMrAAAAABqAqd0yZPyQ5WByQCPDwpuCGE7Y"></div>
                 </div>
                 <button class="button"> Отправить </button>
             </form>
@@ -541,6 +542,8 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"></script>
+
     <script src="/assets/js/main.js"></script>
 </body>
 

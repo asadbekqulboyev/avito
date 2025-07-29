@@ -19,20 +19,22 @@
     background: #fff;
     width: 100%;
     color: #000;
+    font-family: "Montserrat";
+    font-size: 18px;
     border: 1px solid #000;
   }
   &_content {
     position: absolute;
     inset: 0;
     margin: auto;
-    padding: 20px;
+    padding: 40px 29px;
     border-radius: 30px;
     max-width: 556px;
     background: #fff;
     height: fit-content;
   }
   &_inputs {
-    padding-top: 24px;
+    padding-top: 34px;
     display: flex;
     flex-direction: column;
     gap: 10px;

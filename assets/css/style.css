@@ -1243,8 +1243,11 @@
 }
 @media (max-width: 768px) {
   .avito_offer_statistics_item .mobile_chek {
-    display: inline;
+    display: flex;
+    padding-top: 5px;
     font-size: 0;
+    align-items: center;
+    justify-content: flex-start;
   }
 }
 .avito_offer_statistics_item .mobile_chek span {
@@ -1255,7 +1258,6 @@
   font-style: italic;
   display: inline-block;
   position: relative;
-  top: -7px;
   padding-left: 5px;
 }
 @media (max-width: 768px) {

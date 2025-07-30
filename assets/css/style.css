@@ -1674,6 +1674,8 @@
   left: 0;
   height: 100%;
   background: rgba(0, 0, 0, 0.8078431373);
+}
+.modal#thanks {
   display: none;
 }
 .modal_title {
@@ -1691,6 +1693,16 @@
   font-family: "Montserrat";
   font-size: 18px;
   border: 1px solid #000;
+}
+.modal input.error,
+.modal textarea.error {
+  border: 1px solid red;
+  background: #ffe6e6;
+}
+.modal .input_error {
+  border: 1px solid #e53935 !important;
+  background-color: #ffe6e6;
+  outline: none;
 }
 .modal_content {
   position: absolute;
@@ -1720,6 +1732,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.modal .exit_modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: #000;
+  font-size: 35px;
+}
+.modal#thanks .modal_content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 340px;
+  align-items: center;
+  padding: 36px 25px;
+}
+.modal#thanks .modal_content .modal_title {
+  line-height: normal;
+  text-align: center;
 }
 
 body {

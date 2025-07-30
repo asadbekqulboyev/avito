@@ -18,7 +18,7 @@ $(document).ready(function () {
     });
     AOS.init();
     $('.open_modal').click(function(){
-      $('.modal').fadeIn()
+      $('.modal#consult').fadeIn()
     })
     $('.phone_mask').inputmask({
       mask: '+7 (999) 999-99-99',
@@ -26,38 +26,134 @@ $(document).ready(function () {
       showMaskOnFocus: true,
       clearIncomplete: true
     });
-    $('#consult_form').on('submit', function(e) {
-      e.preventDefault();
-  
-      // CAPTCHA tekshirish
-      var recaptcha = grecaptcha.getResponse();
-      if (!recaptcha) {
-        alert("Пожалуйста, подтвердите, что вы не робот.");
-        return;
+    // $('#consult_form').on('submit', function(e) {
+    //   e.preventDefault();
+    
+    //   var nameInput = $('input[name="firstname"]');
+    //   var phoneInput = $('input[name="phone"]');
+    //   var isValid = true;
+    
+    //   // Error classlarini tozalash
+    //   nameInput.removeClass('error');
+    //   phoneInput.removeClass('error');
+    
+    //   // Ismni tekshirish
+    //   if (nameInput.val().trim() === "") {
+    //     nameInput.addClass('error');
+    //     isValid = false;
+    //   }
+    
+    //   // Telefonni tekshirish
+    //   if (phoneInput.val().trim() === "") {
+    //     phoneInput.addClass('error');
+    //     isValid = false;
+    //   }
+    
+    //   // Agar bo'sh maydon bo'lsa forma yuborilmaydi
+    //   if (!isValid) {
+    //     return;
+    //   }
+    
+    //   // CAPTCHA tekshirish
+    //   var recaptcha = grecaptcha.getResponse();
+    //   if (!recaptcha) {
+        
+    //     return;
+    //   }
+    
+    //   // Ma'lumotlarni olish
+    //   var name = nameInput.val().trim();
+    //   var phone = phoneInput.val().trim();
+    //   var comment = $('textarea[name="comment"]').val().trim();
+    //   var token = '6654691576:AAGJ11Vuv5Kz-njb1dO49fJ5hSqeYJVeOPA';
+    //   var chat_id = '2109316820';
+    
+    //   var text = "📝 Новая заявка на консультацию:\n\n" +
+    //              "<b>👤 Имя: </b>" + name + "\n" +
+    //              "<b>📞 Телефон: </b>" + phone + "\n" +
+    //              "<b>💬 Пожелания: </b>" + (comment ? comment : "—");
+    
+    //   // Telegramga yuborish
+    //   $.get("https://api.telegram.org/bot" + token + "/sendMessage", {
+    //     chat_id: chat_id,
+    //     text: text,
+    //     parse_mode: "HTML"
+    //   }).done(function() {
+    //     $('.modal').fadeOut();
+    //     $('.modal#thanks').fadeIn();
+    //     $('#consult_form')[0].reset();
+    //     grecaptcha.reset();
+    //   }).fail(function() {
+    //     alert("Ошибка при отправке. Попробуйте позже.");
+    //   });
+    // });
+    const ERROR_CLASS = 'input_error';
+
+    function validateForm() {
+      let valid = true;
+    
+      const $name = $('input[name="firstname"]');
+      const $phone = $('input[name="phone"]');
+    
+      $name.removeClass(ERROR_CLASS);
+      $phone.removeClass(ERROR_CLASS);
+    
+      if (!$name.val().trim()) {
+        $name.addClass(ERROR_CLASS);
+        valid = false;
       }
-  
-      var name = $('input[name="firstname"]').val();
-      var phone = $('input[name="phone"]').val();
-      var comment = $('textarea[name="comment"]').val();
-  
-      var token = '6654691576:AAGJ11Vuv5Kz-njb1dO49fJ5hSqeYJVeOPA';
-      var chat_id = '2109316820';
-  
-      var text = "📝 Новая заявка на консультацию:\n\n" +
-                 "<b>👤 Имя: </b>" + name + "\n" +
-                 "<b>📞 Телефон: </b>" + phone + "\n" +
-                 "<b>💬 Пожелания: </b>" + (comment ? comment : "—");
-  
-      $.get("https://api.telegram.org/bot" + token + "/sendMessage", {
+    
+      if (!$phone.val().trim()) {
+        $phone.addClass(ERROR_CLASS);
+        valid = false;
+      }
+    
+      return valid;
+    }
+    
+    // Inputga yozganda xatolikni olib tashlaydi
+    $(document).on('input', 'input[name="firstname"], input[name="phone"]', function () {
+      $(this).removeClass(ERROR_CLASS);
+    });
+    
+    // Forma yuborilishi
+    $('#consult_form').on('submit', function (e) {
+      e.preventDefault();
+    
+      if (validateForm()) {
+        grecaptcha.execute(); // invisible captcha'ni ishga tushiradi
+      }
+    });
+    
+    // CAPTCHA muvaffaqiyatli o‘tganda chaqiriladi
+    function onSubmit(token) {
+      const name = $('input[name="firstname"]').val().trim();
+      const phone = $('input[name="phone"]').val().trim();
+      const comment = $('textarea[name="comment"]').val().trim();
+    
+      const text = "📝 Новая заявка на консультацию:\n\n" +
+                   "<b>👤 Имя: </b>" + name + "\n" +
+                   "<b>📞 Телефон: </b>" + phone + "\n" +
+                   "<b>💬 Пожелания: </b>" + (comment || "—");
+    
+      const token_bot = '6654691576:AAGJ11Vuv5Kz-njb1dO49fJ5hSqeYJVeOPA';
+      const chat_id = '2109316820';
+    
+      $.get("https://api.telegram.org/bot" + token_bot + "/sendMessage", {
         chat_id: chat_id,
-        text: text
-      }).done(function() {
-        alert("Спасибо! Ваша заявка успешно отправлена.");
+        text: text,
+        parse_mode: "HTML"
+      }).done(function () {
+        $('.modal').fadeOut();
+        $('.modal#thanks').fadeIn();
         $('#consult_form')[0].reset();
         grecaptcha.reset();
-      }).fail(function() {
-        alert("Ошибка при отправке. Попробуйте позже.");
+      }).fail(function () {
+        alert("Yuborishda xatolik yuz berdi. Keyinroq urinib ko‘ring.");
       });
-    });
+    }
+    $('.exit_modal').click(function(){
+      $('.modal').fadeOut()
+    })
   });
   

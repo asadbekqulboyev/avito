@@ -39,7 +39,9 @@
     color: #000;
     font-size: 36px;
     @media (max-width: 556px) {
-      font-size: 24px;
+      font-size: 22px;
+      line-height: normal;
+      text-align: center;
     }
   }
   input,
@@ -74,7 +76,7 @@
     background: #fff;
     height: fit-content;
     @media (max-width: 556px) {
-      padding: 29px 24px;
+      padding: 45px 24px;
       width: calc(100% - 15px);
     }
   }
@@ -96,6 +98,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 556px) {
+      width: 100%;
+      max-width: 100%;
+    }
   }
   .exit_modal {
     position: absolute;

@@ -91,7 +91,10 @@ $(document).ready(function () {
           $('.modal').fadeOut();
           $('.modal#thanks').fadeIn();
           $('#consult_form')[0].reset();
-          grecaptcha.reset(); // CAPTCHA qayta yuklanadi
+          grecaptcha.reset(); 
+          setTimeout(() => {
+            $('.modal#thanks').fadeOut();
+          }, 4000);
         });
       }
   });

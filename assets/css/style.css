@@ -1905,4 +1905,9 @@ body.hidden {
 main {
   position: relative;
   z-index: 2;
+}
+
+.alert {
+  color: red;
+  font-size: 12px;
 }/*# sourceMappingURL=style.css.map */

@@ -87,71 +87,7 @@ $(document).ready(function () {
     //     alert("Ошибка при отправке. Попробуйте позже.");
     //   });
     // });
-    const ERROR_CLASS = 'input_error';
-
-    function validateForm() {
-      let valid = true;
     
-      const $name = $('input[name="firstname"]');
-      const $phone = $('input[name="phone"]');
-    
-      $name.removeClass(ERROR_CLASS);
-      $phone.removeClass(ERROR_CLASS);
-    
-      if (!$name.val().trim()) {
-        $name.addClass(ERROR_CLASS);
-        valid = false;
-      }
-    
-      if (!$phone.val().trim()) {
-        $phone.addClass(ERROR_CLASS);
-        valid = false;
-      }
-    
-      return valid;
-    }
-    
-    // Inputga yozganda xatolikni olib tashlaydi
-    $(document).on('input', 'input[name="firstname"], input[name="phone"]', function () {
-      $(this).removeClass(ERROR_CLASS);
-    });
-    
-    // Forma yuborilishi
-    $('#consult_form').on('submit', function (e) {
-      e.preventDefault();
-    
-      if (validateForm()) {
-        grecaptcha.execute(); // invisible captcha'ni ishga tushiradi
-      }
-    });
-    
-    // CAPTCHA muvaffaqiyatli o‘tganda chaqiriladi
-    function onSubmit(token) {
-      const name = $('input[name="firstname"]').val().trim();
-      const phone = $('input[name="phone"]').val().trim();
-      const comment = $('textarea[name="comment"]').val().trim();
-    
-      const text = "📝 Новая заявка на консультацию:\n\n" +
-                   "<b>👤 Имя: </b>" + name + "\n" +
-                   "<b>📞 Телефон: </b>" + phone + "\n" +
-                   "<b>💬 Пожелания: </b>" + (comment || "—");
-    
-      const token_bot = '6654691576:AAGJ11Vuv5Kz-njb1dO49fJ5hSqeYJVeOPA';
-      const chat_id = '2109316820';
-    
-      $.get("https://api.telegram.org/bot" + token_bot + "/sendMessage", {
-        chat_id: chat_id,
-        text: text,
-        parse_mode: "HTML"
-      }).done(function () {
-        $('.modal').fadeOut();
-        $('.modal#thanks').fadeIn();
-        $('#consult_form')[0].reset();
-        grecaptcha.reset();
-      }).fail(function () {
-        alert("Yuborishda xatolik yuz berdi. Keyinroq urinib ko‘ring.");
-      });
-    }
     $('.exit_modal').click(function(){
       $('.modal').fadeOut()
     })

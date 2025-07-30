@@ -1675,12 +1675,46 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.8078431373);
 }
+@media (max-width: 556px) {
+  .modal {
+    padding: 0 15px;
+  }
+}
 .modal#thanks {
   display: none;
+}
+.modal label {
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+.modal label input {
+  width: fit-content;
+  transform: scale(1.7);
+  flex: 0 0 auto;
+}
+.modal label p {
+  font-size: 14px;
+}
+@media (max-width: 556px) {
+  .modal label p {
+    font-size: 12px;
+    line-height: normal;
+  }
+}
+.modal label p a {
+  color: #000;
 }
 .modal_title {
   color: #000;
   font-size: 36px;
+}
+@media (max-width: 556px) {
+  .modal_title {
+    font-size: 24px;
+  }
 }
 .modal input,
 .modal textarea {
@@ -1713,6 +1747,12 @@
   max-width: 556px;
   background: #fff;
   height: fit-content;
+}
+@media (max-width: 556px) {
+  .modal_content {
+    padding: 29px 24px;
+    width: calc(100% - 15px);
+  }
 }
 .modal_inputs {
   padding-top: 34px;

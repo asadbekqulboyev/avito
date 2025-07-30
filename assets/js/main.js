@@ -33,6 +33,47 @@ $(document).ready(function () {
     })
   });
   $(document).ready(function () {
+    // Telefon maskasi
+    $('.phone_mask').inputmask({
+      mask: '+7 (999) 999-99-99',
+      showMaskOnHover: false,
+      showMaskOnFocus: true,
+      clearIncomplete: true
+    });
+  
+    // Modal ochish
+    $('.open_modal').click(function () {
+      $('.modal#consult').fadeIn();
+    });
+  
+    // Modal yopish
+    $('.exit_modal').click(function () {
+      $('.modal').fadeOut();
+    });
+  
+    // FAQ toggle
+    $('.faq_accordion__trigger').on('click', function () {
+      const $this = $(this);
+      const $content = $this.next('.faq_accordion__content');
+  
+      $('.faq_accordion__trigger').not($this).removeClass('is_open');
+      $('.faq_accordion__content').not($content).removeClass('is_visible');
+  
+      $this.toggleClass('is_open');
+      $content.toggleClass('is_visible');
+    });
+  
+    // Mobil menyu
+    $('.hamburger').click(function () {
+      $(this).toggleClass('active');
+      $('.header_mobile').toggleClass('active');
+      $('body').toggleClass('hidden');
+    });
+  
+    // AOS kutubxonasi
+    AOS.init();
+  
+    // Formani yuborish
     $('#consult_form').on('submit', function (e) {
       e.preventDefault();
   
@@ -42,7 +83,6 @@ $(document).ready(function () {
   
       var name = nameInput.val().trim();
       var phone = phoneInput.val().trim();
-      var comment = commentInput.val().trim();
   
       var hasError = false;
   
@@ -61,10 +101,12 @@ $(document).ready(function () {
   
       if (hasError) return;
   
+      // ReCAPTCHA invisible — ishga tushiramiz
       grecaptcha.execute();
     });
   });
   
+  // ReCAPTCHA muvaffaqiyatli o‘tganda chaqiriladi
   function onSubmit(token) {
     var name = $('input[name="firstname"]').val().trim();
     var phone = $('input[name="phone"]').val().trim();
@@ -86,7 +128,7 @@ $(document).ready(function () {
       $('.modal').fadeOut();
       $('.modal#thanks').fadeIn();
       $('#consult_form')[0].reset();
-      grecaptcha.reset();
+      grecaptcha.reset(); // Reset CAPTCHA
     });
   }
   

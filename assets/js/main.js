@@ -26,67 +26,68 @@ $(document).ready(function () {
       showMaskOnFocus: true,
       clearIncomplete: true
     });
-    // $('#consult_form').on('submit', function(e) {
-    //   e.preventDefault();
+    $('#consult_form').on('submit', function(e) {
+      e.preventDefault();
     
-    //   var nameInput = $('input[name="firstname"]');
-    //   var phoneInput = $('input[name="phone"]');
-    //   var isValid = true;
+      var nameInput = $('input[name="firstname"]');
+      var phoneInput = $('input[name="phone"]');
+      var commentInput = $('textarea[name="comment"]');
     
-    //   // Error classlarini tozalash
-    //   nameInput.removeClass('error');
-    //   phoneInput.removeClass('error');
+      var name = nameInput.val().trim();
+      var phone = phoneInput.val().trim();
+      var comment = commentInput.val().trim();
     
-    //   // Ismni tekshirish
-    //   if (nameInput.val().trim() === "") {
-    //     nameInput.addClass('error');
-    //     isValid = false;
-    //   }
+      var hasError = false;
     
-    //   // Telefonni tekshirish
-    //   if (phoneInput.val().trim() === "") {
-    //     phoneInput.addClass('error');
-    //     isValid = false;
-    //   }
+      // Avvalgi xatolik klasslarini olib tashlaymiz
+      nameInput.removeClass('error');
+      phoneInput.removeClass('error');
     
-    //   // Agar bo'sh maydon bo'lsa forma yuborilmaydi
-    //   if (!isValid) {
-    //     return;
-    //   }
+      // Foydalanuvchi ism kiritmagan bo‘lsa
+      if (name === '') {
+        nameInput.addClass('error');
+        hasError = true;
+      }
     
-    //   // CAPTCHA tekshirish
-    //   var recaptcha = grecaptcha.getResponse();
-    //   if (!recaptcha) {
-        
-    //     return;
-    //   }
+      // Telefon kiritilmagan bo‘lsa
+      if (phone === '') {
+        phoneInput.addClass('error');
+        hasError = true;
+      }
     
-    //   // Ma'lumotlarni olish
-    //   var name = nameInput.val().trim();
-    //   var phone = phoneInput.val().trim();
-    //   var comment = $('textarea[name="comment"]').val().trim();
-    //   var token = '6654691576:AAGJ11Vuv5Kz-njb1dO49fJ5hSqeYJVeOPA';
-    //   var chat_id = '2109316820';
+      // Agar inputlar to‘ldirilmagan bo‘lsa, to‘xtatamiz
+      if (hasError) {
+        return;
+      }
     
-    //   var text = "📝 Новая заявка на консультацию:\n\n" +
-    //              "<b>👤 Имя: </b>" + name + "\n" +
-    //              "<b>📞 Телефон: </b>" + phone + "\n" +
-    //              "<b>💬 Пожелания: </b>" + (comment ? comment : "—");
+      // CAPTCHA tekshiruvi
+      var recaptcha = grecaptcha.getResponse();
+      if (!recaptcha) {
+        alert("Iltimos, CAPTCHA tasdiqlang.");
+        return;
+      }
     
-    //   // Telegramga yuborish
-    //   $.get("https://api.telegram.org/bot" + token + "/sendMessage", {
-    //     chat_id: chat_id,
-    //     text: text,
-    //     parse_mode: "HTML"
-    //   }).done(function() {
-    //     $('.modal').fadeOut();
-    //     $('.modal#thanks').fadeIn();
-    //     $('#consult_form')[0].reset();
-    //     grecaptcha.reset();
-    //   }).fail(function() {
-    //     alert("Ошибка при отправке. Попробуйте позже.");
-    //   });
-    // });
+      // Ma'lumotlarni Telegramga yuborish
+      var token = '6654691576:AAGJ11Vuv5Kz-njb1dO49fJ5hSqeYJVeOPA';
+      var chat_id = '2109316820';
+      var text = "📝 Новая заявка на консультацию:\n\n" +
+                 "<b>👤 Имя: </b>" + name + "\n" +
+                 "<b>📞 Телефон: </b>" + phone + "\n" +
+                 "<b>💬 Пожелания: </b>" + (comment ? comment : "—");
+    
+      $.get("https://api.telegram.org/bot" + token + "/sendMessage", {
+        chat_id: chat_id,
+        text: text,
+        parse_mode: 'HTML'
+      }).done(function() {
+        $('.modal').fadeOut();
+        $('.modal#thanks').fadeIn();
+        $('#consult_form')[0].reset();
+        grecaptcha.reset();
+      }).fail(function() {
+        alert("Xatolik yuz berdi. Iltimos, keyinroq urinib ko‘ring.");
+      });
+    });
     
     $('.exit_modal').click(function(){
       $('.modal').fadeOut()

@@ -76,7 +76,7 @@ $(document).ready(function () {
       // Ma'lumotlarni Telegram botga yuborish funksiyasi
       function sendToTelegram(name, phone, comment) {
         var token_bot = '8264698458:AAFGv9z-9sfTIA3tAXQW1z7x3tYakiRl3CE';
-        var chat_id = '2109316820';
+        var chat_id = '452486229';
     
         var text = "📝 Новая заявка на консультацию:\n\n" +
                    "<b>👤 Имя: </b>" + name + "\n" +

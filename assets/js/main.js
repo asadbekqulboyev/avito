@@ -16,6 +16,11 @@ $(document).ready(function () {
       $('.header_mobile').toggleClass('active');
       $('body').toggleClass('hidden');
     });
+    $('.header_mobile ul li a').click(function () { 
+      $('.header_mobile').removeClass('active'); 
+      $('.hamburger').removeClass('active'); 
+      $('body').removeClass('hidden'); 
+    }); 
     AOS.init();
     $('.open_modal').click(function(){
       $('.modal#consult').fadeIn()

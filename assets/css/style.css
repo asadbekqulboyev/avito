@@ -166,6 +166,7 @@
   justify-content: center;
   align-items: center;
   z-index: 222;
+  position: fixed;
 }
 .header .hamburger.active span {
   position: absolute;
@@ -1821,7 +1822,6 @@ body {
 body.hidden {
   overflow: hidden;
 }
-
 .wrapper {
   overflow: hidden;
   position: relative;
